@@ -51,10 +51,26 @@ export default async function handler(req, res) {
         messages: [
           {
             role: 'user',
-            content: `Analyze this document and suggest a course of action:\n\n${fileContent}`,
+            content: `You are an expert real estate professional that contacts potential clients by email.
+
+Take the accompanying  CSV file and for each of the first 3 rows create the following:
+
+Make a bullet point list of the 1st Owner's First Name, 1st Owner’s Last Name, Site City, Purchase Price (use dollar sign and commas), Legal Description, Email and if there is no entry for the field, indicate it with a "N/A"
+
+--- 
+
+After the bullet point list, compose an email, like this(If there is no "1st Owner’s First Name", the first line should read "Dear Home Owner" and if there is no "Site Address" the email body should read "I think your property is great and I think I can sell it within 3 days. Let's connect, call me at 310-912-4600." ):
+
+Dear[1st Owner's First Name],
+
+I think your property is great at [Site Address] and I think I can sell it within 3 days. Let's connect, call me at 310-912-4600.
+
+Keep it cool...
+
+Dylan Westland\n\n${fileContent}`,
           },
         ],
-        max_tokens: 500,
+        max_tokens: 1000,
         temperature: 0.7,
       }),
     }

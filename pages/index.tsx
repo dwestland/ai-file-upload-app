@@ -51,7 +51,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>AI File Analyzer</title>
+        <title>AI Lead Generator</title>
       </Head>
 
       <main className={styles.main}>
@@ -62,10 +62,8 @@ export default function Home() {
           alt="file Upload"
         />
         <h2>Welcome to</h2>
-        <h1 className={styles.title}>AI File Analyzer</h1>
-        <p className={styles.description}>
-          Upload your CSV or PDF file for analysis
-        </p>
+        <h1 className={styles.title}>AI Lead Generator</h1>
+        <p className={styles.description}>Upload your CSV file for analysis</p>
         <form onSubmit={handleSubmit}>
           <input type="file" accept=".csv,.pdf" onChange={handleFileChange} />
           {isFileEmpty ? (
@@ -88,7 +86,7 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-        <p>Somebody &nbsp;&nbsp; &copy; {year}</p>
+        <p>AI Lead Generator &nbsp;&nbsp; &copy; {year}</p>
       </footer>
     </div>
   )
